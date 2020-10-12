@@ -15,7 +15,7 @@ tinymce.init({
   });
 
   
-	document.addEventListener( 'DOMContentLoaded', function () {
+document.addEventListener( 'DOMContentLoaded', function () {
         new Splide( '.splide',{
             perPage: 3,
             autoplay: "true",

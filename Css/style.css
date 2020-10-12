@@ -2,3 +2,11 @@
 .carousel-item{
     height: 80vh;
 }
+.logo{
+    width: 50%;
+    margin-top: 100px;
+    margin-left: 140px;;
+}
+.splide{
+    width: 30%;
+}

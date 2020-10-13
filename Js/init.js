@@ -35,4 +35,76 @@ document.addEventListener( 'DOMContentLoaded', function () {
                 },
             }
         } ).mount();
-	} );
+    } );
+    
+ //--------------------------------------------------------------------------------------------   
+   
+
+    window.mostrarErrores = (listaErrores)=>{
+        let error = document.querySelector("#divErrores");
+        let ol = document.createElement("ol");
+        ol.classList.add("alert","alert-danger");
+        listaErrores.forEach((items)=>{
+            let li = document.createElement("li");
+            li.classList.add("list-group-item");
+            li.innerText = items;
+            ol.appendChild(li);
+        });
+        error.appendChild(ol);
+    }
+
+    window.registroContacto = [];//Lista para guardar contactos
+    
+    const btnAux = document.querySelector("#btnEnviar");
+    
+    btnAux.addEventListener('click', ()=>{
+        let erroresDiv = document.querySelector("#divErrores");
+        erroresDiv.innerHTML = "";
+
+        let name = document.querySelector("#inputNombre").value.trim();
+        let lastname = document.querySelector("#inputApellido").value.trim();
+        let movile = document.querySelector("#inputTelefono").value.trim();
+        let nacional = document.querySelector("#inputNacionalidad").value.trim();
+        let email = document.querySelector("#inputEmail").value.trim();
+        let description = tinymce.get('txt-textarea').getContent();
+        
+
+        listaErrores = [];//Lista para los Errores
+        if(name === ""){
+            listaErrores.push("Ingrese un Nombre")
+        }if(lastname === ""){
+            listaErrores.push("Ingrese un Apellido")
+        }if(movile === ""){
+            listaErrores.push("Ingrese Numero Telefonico")
+        }if(nacional === ""){
+            listaErrores.push("Ingrese su Nacionalidad")
+        }if(email === ""){
+            listaErrores.push("Ingrese Email")
+            //if(email.charAt(email.length -1 === "@")){
+              //  listaErrores.push("Ingrese email valido");
+            //}
+        }if(description === ""){
+            listaErrores.push("Ingrese una Descripcion")
+        }if(listaErrores.length === 0){
+            let registroContacto = {}
+                registroContacto.nombre = name;
+                registroContacto.apellido = lastname;
+                registroContacto.telefono = movile;
+                registroContacto.nacionalidad = nacional;
+                registroContacto.correo = email;
+                registroContacto.mensaje = description;
+
+            window.registroContacto.push(registroContacto);
+            Swal.fire(
+                'Gracias!',
+                'Registro ingresado correctamente!',
+                'success'
+              )
+        }else{
+            window.mostrarErrores(listaErrores);   
+        }
+    });
+
+
+
+

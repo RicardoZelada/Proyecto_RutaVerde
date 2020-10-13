@@ -40,7 +40,13 @@
         <div class="row">
             <div class="col-6">
                 <div class="card">
+                  <div class="card-header p-3 text-success">
+                    <h3 class="display">Registrate con nosotros</h3>
+                </div>
                     <div class="card-body">
+                      <div id="divErrores">
+
+                      </div>
                         <form class="row g-3">
                             <div class="col-md-6">
                               <label for="inputNombre" class="form-label">Nombre</label>
@@ -69,7 +75,7 @@
                     </div>
                     <div class="card-footer">
                         <div class="col-12">
-                            <button type="button" class="btn btn-success btn-lg btn-block">Enviar Solicitud</button>
+                            <button type="button" id="btnEnviar" class="btn btn-success btn-lg btn-block">Enviar Solicitud</button>
                           </div>
                     </div>
                 </div>
@@ -126,26 +132,16 @@
         <h1 class="text-center p-4 text-white">Aca va el Footer</h1>
       </footer>
 
-    
 
-
-
-
-
-
-
-
-
-
-
-
-    
+  
 
     <!-- Option 1: Bootstrap Bundle with Popper.js -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <script src="Vendor/js/tinymce/tinymce.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="Js/init.js"></script>
+    
 
     <!-- Option 2: Separate Popper.js and Bootstrap JS
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

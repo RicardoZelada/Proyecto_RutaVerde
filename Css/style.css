@@ -7,3 +7,16 @@
     margin-top: 100px;
     margin-left: 140px;;
 }
+
+.logoHeader{
+    width: 200px;
+}
+
+#spinner{
+    background: #4267b2;
+    /*border-radius: 5px;*/
+    color: white;
+    height: 40px;
+    text-align: center;
+    width: 250px;
+}

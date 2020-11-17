@@ -68,7 +68,7 @@ window.cargarIngreso = ()=>{
             //creacion del Li para el mensaje
             let liMensaje = document.createElement("li");
             liMensaje.classList.add("list-group-item");
-            liMensaje.innerText = "Mensaje :" + elementos.mensaje;
+            liMensaje.innerText = "Mensaje : " + elementos.mensaje;
             //creacion del Li para la foto
             liImagen = document.createElement("li");
             liImagen.classList.add("list-group-item","p-2");
@@ -114,7 +114,7 @@ window.cargarIngreso = ()=>{
             //creacion del Li para el mensaje
             let liMensaje = document.createElement("li");
             liMensaje.classList.add("list-group-item");
-            liMensaje.innerText = "Mensaje :" + elementos.mensaje;
+            liMensaje.innerText = "Mensaje : " + elementos.mensaje;
             //creacion del Li para la foto
             liImagen = document.createElement("li");
             liImagen.classList.add("list-group-item","p-2");
@@ -159,7 +159,7 @@ window.cargarIngreso = ()=>{
             //creacion del Li para el mensaje
             let liMensaje = document.createElement("li");
             liMensaje.classList.add("list-group-item");
-            liMensaje.innerText = "Mensaje :" + elementos.mensaje;
+            liMensaje.innerText = "Mensaje : " + elementos.mensaje;
             //creacion del Li para la foto
             liImagen = document.createElement("li");
             liImagen.classList.add("list-group-item","p-2");
@@ -204,7 +204,7 @@ window.cargarIngreso = ()=>{
             //creacion del Li para el mensaje
             let liMensaje = document.createElement("li");
             liMensaje.classList.add("list-group-item");
-            liMensaje.innerHTML = "Mensaje :" + elementos.mensaje;
+            liMensaje.innerHTML = "Mensaje : " + elementos.mensaje;
             //creacion del Li para la foto
             liImagen = document.createElement("li");
             liImagen.classList.add("list-group-item","p-2");

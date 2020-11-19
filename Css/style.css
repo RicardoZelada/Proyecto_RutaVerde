@@ -20,3 +20,9 @@
     text-align: center;
     width: 250px;
 }
+
+.imagenCss{
+    width: 35px;
+    margin-left: 10px;
+    border-radius: 50px;
+}

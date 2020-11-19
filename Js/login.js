@@ -1,31 +1,32 @@
 
 function onSignIn(googleUser) {
-    //profile = googleUser.getBasicProfile();
-    //console.log(JSON.stringify(profile));
-    console.log('ID: ' + googleUser.getBasicProfile().getId()); // Do not send to your backend! Use an ID token instead.
-    console.log('Name: ' + googleUser.getBasicProfile().getName());
-    console.log('Image URL: ' + googleUser.getBasicProfile().getImageUrl());
-    console.log('Email: ' + googleUser.getBasicProfile().getEmail()); // This is null if the 'email' scope is not present.
-      var id_token = googleUser.getAuthResponse().id_token;
-      console.log(id_token)
+    profile = googleUser.getBasicProfile();
+    console.log(profile);
+
+    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+    console.log('Name: ' + profile.getName());
+    console.log('Image URL: ' + profile.getImageUrl());
+    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+      //var id_token = googleUser.getAuthResponse().id_token;
+      //console.log(id_token)
     
-    localStorage.setItem('usuario',googleUser.getBasicProfile().getName());
-    localStorage.setItem('imagen',googleUser.getBasicProfile().getImageUrl());
+      localStorage.setItem('usuario',profile.getName());
+      localStorage.setItem('imagen',profile.getImageUrl());
     
       console.log(localStorage);
         
       let user = localStorage.getItem('usuario');
       let image = localStorage.getItem('imagen');
         if(user != 'null' && image != 'undefined'){
-        let navSecion = document.querySelector('#nav-Login');
+        let navSecion = document.querySelector(".nav-Login");
+        //let navSecionInicio = document.querySelector(".nav-Login");
+
             navSecion.classList.add("bg-light","bg-gradient","text-right","mr-5");
-            //let nombreLogin = document.createElement("div");
-            //nombreLogin.classList.add("bg-success");
             navSecion.innerText = "Bienvenido : " + user;
+           // navSecionInicio.classList.add("bg-light","bg-gradient","text-right","mr-5");
+           // navSecionInicio.innerText = "Bienvenido : " + user
             let imagenLogin = document.createElement("img");
-            imagenLogin.style.width = "35px";
-            imagenLogin.style.marginLeft = "10px";
-            imagenLogin.style.borderRadius = "50px";
+            imagenLogin.classList.add("imagenCss")
             imagenLogin.setAttribute('src', image);
             let linkSignOut = document.createElement("a");
             linkSignOut.classList = ("stretched-link", "pl-3")
@@ -33,19 +34,24 @@ function onSignIn(googleUser) {
             linkSignOut.addEventListener('click', ()=>{
               signOut();
             })
-            //imagenLogin.classList.add("img-fluid");
-            //imagenLogin.innerHTML = + image;
             navSecion.appendChild(imagenLogin);
             navSecion.appendChild(linkSignOut);
+            //navSecionInicio.appendChild(imagenLogin);
+            //navSecionInicio.appendChild(linkSignOut);   
         }
-
+        //window.location.href = "index.html";
+        
 }
+
+
+
+
 
 function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
       localStorage.clear();
-      let navSignOut = document.querySelector("#nav-Login");
+      let navSignOut = document.querySelector(".nav-Login");
         navSignOut.innerHTML = "";  
         console.log('User signed out.');
     });
@@ -77,16 +83,15 @@ function signOut() {
     FB.getLoginStatus(function(response){
       if(response.status === "connected"){
         showData();
+
         let user = localStorage.getItem('usuario');
         let image = localStorage.getItem('imagen');
 
-        let navSecion = document.querySelector('#nav-Login');
+        let navSecion = document.querySelector('.nav-Login');
             navSecion.classList.add("bg-light","bg-gradient","text-right","mr-5");
             navSecion.innerText = "Bienvenido : " + user;
             let imagenLogin = document.createElement("img");
-            imagenLogin.style.width = "35px";
-            imagenLogin.style.marginLeft = "10px";
-            imagenLogin.style.borderRadius = "50px";
+            imagenLogin.classList.add("imagenCss")
             imagenLogin.setAttribute('src', image);
             let linkSignOut = document.createElement("a");
             linkSignOut.classList = ("stretched-link", "pl-3")
@@ -97,18 +102,20 @@ function signOut() {
             })
             navSecion.appendChild(imagenLogin);
             navSecion.appendChild(linkSignOut);
+            //window.location.href = "index.html";
       }else{
         console.log("Error");
       }
     })
   }
 
-  FB.logout(function(response) {
-    // Person is now logged out
-    localStorage.clear();
-    let navSignOut = document.querySelector("#nav-Login");
-        navSignOut.innerHTML = "";  
-        console.log('User signed out.');
+  
+    FB.logout(function(response) {
+      // Person is now logged out
+      localStorage.clear();
+      let navSignOut = document.querySelector(".nav-Login");
+          navSignOut.innerHTML = "";  
+          console.log('User signed out.');
  });
   
   (function(d, s, id){                           // inicializa el sdk

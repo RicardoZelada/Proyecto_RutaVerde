@@ -14,7 +14,7 @@ tinymce.init({
     content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
   });
 
-
+  
 window.mostrarErrores = (erroresLista)=>{//metodo para motrar los errores desde la lista de errores
     let errores = document.querySelector("#divErrores");
     let ol = document.createElement('ol');

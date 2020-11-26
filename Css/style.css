@@ -26,3 +26,8 @@
     margin-left: 10px;
     border-radius: 50px;
 }
+
+.status{
+    color: #055e05;
+    font-weight: bold;
+}

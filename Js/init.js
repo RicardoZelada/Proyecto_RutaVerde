@@ -36,10 +36,9 @@ document.addEventListener( 'DOMContentLoaded', function () {
             }
         } ).mount();
     } );
-    
- //--------------------------------------------------------------------------------------------   
-   
 
+  
+ //--------------------------------------------------------------------------------------------   
     window.mostrarErrores = (listaErrores)=>{
         let error = document.querySelector("#divErrores");
         let ol = document.createElement("ol");
@@ -80,21 +79,20 @@ document.addEventListener( 'DOMContentLoaded', function () {
             listaErrores.push("Ingrese su Nacionalidad")
         }if(email === ""){
             listaErrores.push("Ingrese Email")
-            //if(email.charAt(email.length -1 === "@")){
-              //  listaErrores.push("Ingrese email valido");
-            //}
         }if(description === ""){
             listaErrores.push("Ingrese una Descripcion")
         }if(listaErrores.length === 0){
-            let registroContacto = {}
-                registroContacto.nombre = name;
-                registroContacto.apellido = lastname;
-                registroContacto.telefono = movile;
-                registroContacto.nacionalidad = nacional;
-                registroContacto.correo = email;
-                registroContacto.mensaje = description;
+            let registroContactos = {}
+                registroContactos.nombre = name;
+                registroContactos.apellido = lastname;
+                registroContactos.telefono = movile;
+                registroContactos.nacionalidad = nacional;
+                registroContactos.correo = email;
+                registroContactos.mensaje = description;                
 
-            window.registroContacto.push(registroContacto);
+            window.registroContacto.push(registroContactos);
+            localStorage.setItem('Contactos', JSON.stringify(registroContacto));
+            console.log(localStorage);
             Swal.fire(
                 'Gracias!',
                 'Registro ingresado correctamente!',

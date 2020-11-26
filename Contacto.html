@@ -15,8 +15,11 @@
   </head>
   
   <body>
+    <nav class="bg-success bg-gradient text-center text-white p-1">
+      <span>Politicas Covid - Mas informacion Aqui </span>
+    </nav>
 
-    <headere>
+    <header class="shadow-sm">
       <div class="row">
         <nav class="nav justify-content-evenly">
           <li class="nav-item">
@@ -31,16 +34,18 @@
           <li class="nav-item p-2 mt-3">
             <a class="nav-link text-dark" href="QuienesSomos.html">Quienes Somos</a>
           </li>
-          <li class="nav-item p-2 mt-3">
-            <a class="nav-link textt-dark" href="Contacto.html">Contacto</a>
+          <li class="nav-item p-2 mt-3 status">
+            <a class="nav-link status" href="Contacto.html">Contacto</a>
+          </li>
+          <li class="nav-item d-none p-2 mt-3 oculto">
+            <a class="nav-link text-dark" href="Contactos_Efectuados.html">Contactos Efectuados</a>
           </li>
           <li class="nav-item p-2 mt-3">
             <a class="nav-link text-dark" href="Login.html">Login</a>
           </li>
         </nav>
       </div> 
-      <nav class="nav-Login">
-
+      <nav class="navUsuario">
       </nav> 
     </header>
 
@@ -57,7 +62,7 @@
                       <div id="divErrores">
 
                       </div>
-                        <form class="row g-3">
+                        <form class="row formContacto g-3">
                             <div class="col-md-6">
                               <label for="inputNombre" class="form-label">Nombre</label>
                               <input type="text" class="form-control" id="inputNombre">
@@ -150,8 +155,10 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <script src="Vendor/js/tinymce/tinymce.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="Js/init.js"></script>
     <script src="Js/login.js"></script>
+    <script src="Js/Contacto.js"></script>
 
     <!-- Option 2: Separate Popper.js and Bootstrap JS
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
